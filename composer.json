@@ -1,5 +1,5 @@
 {
-    "name": "vfw/spacedeck-api",
+    "name": "VonFraunbergWerbung/Spacedeck-API",
     "description": "API to communicate with the PWC Spacedeck.",
     "type": "library",
     "license": "MIT",
