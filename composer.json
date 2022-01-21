@@ -9,7 +9,7 @@
             "email": "markus@vonfraunbergwerbung.de"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {},
 
     "autoload": {
