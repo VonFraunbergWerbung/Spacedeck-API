@@ -1,0 +1,18 @@
+{
+    "name": "vfw/spacedeck-api",
+    "description": "API to communicate with the PWC Spacedeck.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Markus Bartels",
+            "email": "markus@vonfraunbergwerbung.de"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+
+    "autoload": {
+        "psr-4": {"Vfw\\": "src/"}
+    }
+}
