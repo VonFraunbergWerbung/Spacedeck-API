@@ -296,6 +296,17 @@ class Request
 
         return $result;
     }
+    
+    /**
+     * generateUrl
+     * 
+     * @param string $spaceId
+     * @return string
+     */
+    public function generateUrl($spaceId)
+    {
+        return self::API_URL. 'spaces/'. $spaceId;
+    }
 }
 
 ?>
