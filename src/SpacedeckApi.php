@@ -238,6 +238,17 @@ class SpacedeckApi
 
         return false;
     }
+    
+    /**
+     * generateUrl
+     * 
+     * @param string $spaceId
+     * @return string
+     */
+    public function generateUrl($spaceId)
+    {
+        return Request::generateUrl($spaceId);
+    }
 }
 
 ?>
