@@ -18,6 +18,7 @@ class Request
      * @var array
      */
     private const API_EP_CREATE_USER         = ['ep' => 'vfw/user/new', 'type' => 'POST'];
+    private const API_EP_GET_USER            = ['ep' => 'vfw/user/get', 'type' => 'POST'];
     private const API_EP_DETELE_USER         = ['ep' => 'vfw/user/delete', 'type' => 'DELETE'];
     private const API_EP_CHANGE_USER_NAME    = ['ep' => 'vfw/user/name', 'type' => 'PATCH'];
     private const API_EP_CHANGE_USER_ROLE    = ['ep' => 'vfw/user/rights', 'type' => 'PATCH'];
@@ -45,6 +46,21 @@ class Request
         ];
 
         return $this->send(self::API_EP_CREATE_USER, $postData);
+    }
+
+    /**
+     * getUser
+     * 
+     * @param string $email
+     * @return string|bool
+     */
+    public function getUser($email)
+    {
+        $postData = [
+            'email' => $email
+        ];
+
+        return $this->send(self::API_EP_GET_USER, $postData);
     }
 
     /**

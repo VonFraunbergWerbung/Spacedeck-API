@@ -36,6 +36,27 @@ class SpacedeckApi
     }
 
     /**
+     * getUser
+     * 
+     * @param string $email
+     * @return string|bool
+     */
+    public function getUser($email)
+    {
+        $req = new Request();
+        $res = $req->getUser($email);
+        if ($res !== false) {
+            if ($res['status']) {
+                return $res['id'];
+            }
+            
+            // TODO: else ... ?
+        }
+
+        return false;
+    }
+
+    /**
      * deleteUser
      * 
      * @param string $userId
