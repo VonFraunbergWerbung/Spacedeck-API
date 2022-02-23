@@ -14,6 +14,11 @@ class SpacedeckApi
     public const USER_ROLE_VIEWER = "viewer";
 
     /**
+     * @var string
+     */
+    private const SESSION_COOKIE  = "sdsession";
+
+    /**
      * createUser
      * 
      * @param string $email
@@ -232,7 +237,7 @@ class SpacedeckApi
         $res = $req->createUserSession($userId);
         if ($res !== false) {
             if ($res['status']) {
-                setcookie("sdsession", $res['token']);
+                setcookie(self::SESSION_COOKIE, $res['token'], 0, '/');
                 return $res['token'];
             }
             
@@ -253,7 +258,7 @@ class SpacedeckApi
         $req = new Request();
         $res = $req->removeUserSession($userId);
         if ($res !== false) {
-            setcookie("sdsession", "", time() - 3600);
+            setcookie(self::SESSION_COOKIE, "", time() - 3600);
             return $res['status'];
         }
 
