@@ -17,19 +17,20 @@ class Request
     /**
      * @var array
      */
-    private const API_EP_CREATE_USER         = ['ep' => 'vfw/user/new', 'type' => 'POST'];
-    private const API_EP_GET_USER            = ['ep' => 'vfw/user/get', 'type' => 'POST'];
-    private const API_EP_DETELE_USER         = ['ep' => 'vfw/user/delete', 'type' => 'DELETE'];
-    private const API_EP_CHANGE_USER_NAME    = ['ep' => 'vfw/user/name', 'type' => 'PATCH'];
-    private const API_EP_CHANGE_USER_ROLE    = ['ep' => 'vfw/user/rights', 'type' => 'PATCH'];
-    private const API_EP_DELETE_USER_CONTENT = ['ep' => 'vfw/space/remove', 'type' => 'POST'];
-    private const API_EP_ADD_MEMBERSHIP      = ['ep' => 'vfw/user/add', 'type' => 'POST'];
-    private const API_EP_REMOVE_MEMBERSHIP   = ['ep' => 'vfw/user/remove', 'type' => 'DELETE'];
-    private const API_EP_CREATE_SPACE        = ['ep' => 'vfw/space/create', 'type' => 'POST'];
-    private const API_EP_RESET_SPACE         = ['ep' => 'vfw/space/reset', 'type' => 'PURGE'];
-    private const API_EP_DELETE_SPACE        = ['ep' => 'vfw/space/delete', 'type' => 'DELETE'];
-    private const API_EP_CREATE_SESSION      = ['ep' => 'vfw/user/login', 'type' => 'POST'];
-    private const API_EP_REMOVE_SESSION      = ['ep' => 'vfw/user/logout', 'type' => 'POST'];
+    private const API_EP_CREATE_USER         	= ['ep' => 'vfw/user/new', 'type' => 'POST'];
+    private const API_EP_GET_USER            	= ['ep' => 'vfw/user/get', 'type' => 'POST'];
+    private const API_EP_DETELE_USER         	= ['ep' => 'vfw/user/delete', 'type' => 'DELETE'];
+    private const API_EP_CHANGE_USER_NAME    	= ['ep' => 'vfw/user/name', 'type' => 'PATCH'];
+    private const API_EP_CHANGE_USER_ROLE    	= ['ep' => 'vfw/user/rights', 'type' => 'PATCH'];
+    private const API_EP_DELETE_USER_CONTENT 	= ['ep' => 'vfw/space/remove', 'type' => 'POST'];
+    private const API_EP_ADD_MEMBERSHIP      	= ['ep' => 'vfw/user/add', 'type' => 'POST'];
+    private const API_EP_REMOVE_MEMBERSHIP   	= ['ep' => 'vfw/user/remove', 'type' => 'DELETE'];
+    private const API_EP_CREATE_SPACE        	= ['ep' => 'vfw/space/create', 'type' => 'POST'];
+    private const API_EP_RESET_SPACE         	= ['ep' => 'vfw/space/reset', 'type' => 'PURGE'];
+    private const API_EP_DELETE_SPACE       	= ['ep' => 'vfw/space/delete', 'type' => 'DELETE'];
+    private const API_EP_CREATE_SESSION     	= ['ep' => 'vfw/user/login', 'type' => 'POST'];
+    private const API_EP_REMOVE_SESSION      	= ['ep' => 'vfw/user/logout', 'type' => 'POST'];
+    private const API_EP_CHANGE_WELCOME_MESSAGE = ['ep' => 'vfw/space/message', 'type' => 'PATCH'];
 
     /**
      * createUser
@@ -241,6 +242,23 @@ class Request
         ];
 
         return $this->send(self::API_EP_REMOVE_SESSION, $postData);
+    }
+
+    /**
+     * changeWelcomeMessage
+     *
+     * @param string $spaceId
+     * @param string $message
+     * @return string|bool
+     */
+    public function changeWelcomeMessage($spaceId, $message)
+    {
+        $postData = [
+            'id' => $spaceId,
+            'message' => $message
+        ];
+
+        return $this->send(self::API_EP_CHANGE_WELCOME_MESSAGE, $postData);
     }
 
     /**

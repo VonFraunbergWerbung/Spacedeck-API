@@ -266,6 +266,24 @@ class SpacedeckApi
     }
     
     /**
+     * changeWelcomeMessage
+     *
+     * @param string $spaceId
+     * @param string $message
+     * @return string|bool
+     */
+    public function changeWelcomeMessage($spaceId, $message)
+    {
+        $req = new Request();
+        $res = $req->changeWelcomeMessage($spaceId, $message);
+        if ($res !== false) {
+            return $res['status'];
+        }
+
+        return false;
+    }
+
+    /**
      * generateUrl
      * 
      * @param string $spaceId
