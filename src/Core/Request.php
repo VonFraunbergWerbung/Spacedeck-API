@@ -337,7 +337,7 @@ class Request
      * @param string $spaceId
      * @return string
      */
-    public function generateUrl($spaceId)
+    public static function generateUrl($spaceId)
     {
         return self::API_URL. 'spaces/'. $spaceId;
     }
