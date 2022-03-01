@@ -7,7 +7,7 @@ class Request
     /**
      * @var string
      */
-    private const API_URL = 'https://es-koennte.de:9666/';
+    private const API_URL = 'es-koennte.de:9666/';
 
     /**
      * @var string
