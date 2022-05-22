@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Spacedeck</title>
+</head>
+<body>
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const sd = urlParams.get('sd');
+        const token = urlParams.get('token');
+    
+        if (sd != null && token != null) {
+            const exdays = 24;
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            let expires = "expires="+ d.toUTCString();
+            document.cookie = "sdsession=" + token + ";" + expires + ";path=/";
+            window.location.replace('https://wir-pwc-stiftung.de:9666/spaces/' + sd);
+        }
+    </script>
+</body>
+</html>
