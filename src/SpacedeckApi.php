@@ -293,6 +293,18 @@ class SpacedeckApi
     {
         return Request::generateUrl($spaceId);
     }
+
+    /**
+     * generateUrl2
+     * 
+     * @param string $spaceId
+     * @param string $token
+     * @return string
+     */
+    public function generateUrl2($spaceId, $token)
+    {
+        return Request::generateUrl2($spaceId, $token);
+    }
 }
 
 ?>
