@@ -7,7 +7,7 @@ class Request
     /**
      * @var string
      */
-    private const API_URL = 'https://es-koennte.de:9666/';
+    private const API_URL = 'https://wir-pwc-stiftung.de:9666/';
 
     /**
      * @var string
@@ -340,6 +340,18 @@ class Request
     public static function generateUrl($spaceId)
     {
         return self::API_URL. 'spaces/'. $spaceId;
+    }
+
+    /**
+     * generateUrl2
+     * 
+     * @param string $spaceId
+     * @param string $token
+     * @return string
+     */
+    public static function generateUrl2($spaceId, $token)
+    {
+        return 'https://wir-pwc-stiftung.de/spacedeck/?sd='. $spaceId. '&token='. $token;
     }
 }
 
