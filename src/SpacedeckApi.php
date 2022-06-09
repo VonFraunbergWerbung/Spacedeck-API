@@ -237,7 +237,7 @@ class SpacedeckApi
         $res = $req->createUserSession($userId);
         if ($res !== false) {
             if ($res['status']) {
-                setcookie(self::SESSION_COOKIE, $res['token'], 0, env('VFWSD_COOKIE_DOMAIN', Request::COOKIE_DOMAIN));
+                setcookie(self::SESSION_COOKIE, $res['token'], 0, '/', env('VFWSD_COOKIE_DOMAIN', Request::COOKIE_DOMAIN));
                 return $res['token'];
             }
             
