@@ -1,13 +1,18 @@
 <?php
 
-namespace Vfw\Core;
+namespace Vfw\Spacedeck\Core;
 
 class Request
 {
     /**
      * @var string
      */
-    private const API_URL = 'https://wir-pwc-stiftung.de:9666/';
+    private const API_URL = 'https://spacedeck.es-koennte.de/';
+
+    /**
+     * @var string
+     */
+    public const COOKIE_DOMAIN = '.es-koennte.de';
 
     /**
      * @var string
