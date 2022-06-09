@@ -1,8 +1,8 @@
 <?php
 
-namespace Vfw;
+namespace Vfw\Spacedeck;
 
-use Vfw\Core\Request;
+use Vfw\Spacedeck\Core\Request;
 
 class SpacedeckApi
 {
@@ -237,7 +237,7 @@ class SpacedeckApi
         $res = $req->createUserSession($userId);
         if ($res !== false) {
             if ($res['status']) {
-                setcookie(self::SESSION_COOKIE, $res['token'], 0, '/');
+                setcookie(self::SESSION_COOKIE, $res['token'], 0, Request::COOKIE_DOMAIN);
                 return $res['token'];
             }
             
