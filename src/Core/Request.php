@@ -309,7 +309,7 @@ class Request
      */
     private function send($endpoint, $postData)
     {
-        $url = self::API_URL. $endpoint['ep'];
+        $url = env('VFWSD_API_URL', self::API_URL). $endpoint['ep'];
         $payload = json_encode($postData);
 
         $ch = curl_init($url);
@@ -317,7 +317,7 @@ class Request
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $endpoint['type']);
         curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type:application/json',
                                               'Accept:application/json',
-                                              'X-Spacedeck-API-Token:'. self::API_SECRET]);
+                                              'X-Spacedeck-API-Token:'. env('VFWSD_API_SECRET', self::API_SECRET)]);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
         $result = curl_exec($ch);
@@ -344,7 +344,7 @@ class Request
      */
     public static function generateUrl($spaceId)
     {
-        return self::API_URL. 'spaces/'. $spaceId;
+        return env('VFWSD_API_URL', self::API_URL). 'spaces/'. $spaceId;
     }
 
     /**
