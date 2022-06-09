@@ -7,12 +7,12 @@ class Request
     /**
      * @var string
      */
-    private const API_URL = 'https://spacedeck.es-koennte.de/';
+    private const API_URL = 'https://wir-pwc-stiftung.de:9666/';
 
     /**
      * @var string
      */
-    public const COOKIE_DOMAIN = '.es-koennte.de';
+    public const COOKIE_DOMAIN = '/';
 
     /**
      * @var string
